@@ -104,6 +104,12 @@ const login = async (req, res) => {
       });
     }
 
+    if(!isUser.isVerified){
+      return res.status(400).json({
+        error: "Email not verified",
+      });
+    }
+
     if (!isUser) {
       return res.status(404).json({
         error: "User not found",

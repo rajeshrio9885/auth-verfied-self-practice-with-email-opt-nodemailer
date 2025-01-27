@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+::placeholder{
+  color : white
+}
+
+.background{
+  background-color: #1313134d;
+}
+
+h1{
+  color : rgb(10, 230, 83)
+}
