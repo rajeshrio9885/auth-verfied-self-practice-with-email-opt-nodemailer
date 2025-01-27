@@ -2,9 +2,8 @@ const jwt = require("jsonwebtoken")
 
 const protectedRoutes = async(req,res,next)=>{
     try {
-        console.log(req.cookies.token)
         const token = req.cookies.token
-        console.log(token)
+        
         if(!token){
             return res.status(401).json({
                 error : "Not authorised token"
