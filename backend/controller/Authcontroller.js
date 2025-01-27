@@ -219,4 +219,33 @@ const logout = async (req, res) => {
   }
 };
 
-module.exports = { sigin, login, logout,verifyEmail,resetPassword,changePassword};
+const checkRoutes = async(req,res)=>{
+  try {
+    const userId = req.userId
+
+    if(!userId){
+      return res.status(404).json({
+        error : "User not found"
+      })
+    }
+
+    const user = await User.findOne({_id:userId}).select("-password")
+    if(!user){userId
+      return res.suserIdtatus(404).json({
+        error : "User not found"
+      })
+    }
+
+    res.status(200).json({
+      sucess : true,
+      user
+    })
+  } catch (error) {
+    console.log("error in checkRoute "+error)
+    return res.status(500).json({
+      error : "Internal server error"
+    })
+  }
+}
+
+module.exports = { sigin, login, logout,verifyEmail,resetPassword,changePassword,checkRoutes};
