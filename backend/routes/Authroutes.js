@@ -4,7 +4,7 @@ const verifyResetCode = require("../middleWare/verifyResetCode")
 const protectedRoutes = require("../middleWare/ProtectedRoute")
 
 const Authrouter = express.Router()
-
+ 
 Authrouter.post("/signin",sigin)
 Authrouter.post("/login",login)
 Authrouter.post("/logout",logout)

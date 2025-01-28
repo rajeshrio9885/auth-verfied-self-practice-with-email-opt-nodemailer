@@ -104,15 +104,16 @@ const login = async (req, res) => {
       });
     }
 
-    if(!isUser.isVerified){
-      return res.status(400).json({
-        error: "Email not verified",
-      });
-    }
-
     if (!isUser) {
       return res.status(404).json({
         error: "User not found",
+      });
+    }
+
+
+    if(!isUser.isVerified){
+      return res.status(400).json({
+        error: "Email not verified",
       });
     }
 
@@ -128,7 +129,7 @@ const login = async (req, res) => {
       message: "login sucessfully",
     });
   } catch (error) {
-    console.log("Error in login controller");
+    console.log("Error in login controller "+error);
     return res.status(500).json({
       error: "Internal server error",
     });

@@ -11,3 +11,32 @@
 h1{
   color : rgb(10, 230, 83)
 }
+
+/* For Chrome, Edge, and Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#spinner{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid greenyellow;
+  border-bottom:10px solid white;
+  animation: spin 1s ease-in infinite;
+}
+
+@keyframes spin {
+  0%{
+    transform: rotate(0deg);
+  }100%{
+    transform: rotate(360deg);
+  }
+}

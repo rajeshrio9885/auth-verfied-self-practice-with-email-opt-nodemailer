@@ -3,9 +3,7 @@ const User = require("../model/User");
 const verifyResetCode = async(req,res,next)=>{
     try {
         const {code} = req.body;
-
         const user = await User.findOne({resetPasswordToken:code,resetPasswordExpiresAt:{$gt:Date.now()}})
-       // console.log(user)
         if(!user){
             return res.status(400).json({
                 error : "Invalid code or verification code is expired"
@@ -16,6 +14,9 @@ const verifyResetCode = async(req,res,next)=>{
         next()
     } catch (error) {
         console.log("error in verifyResetCode "+error)
+        return res.status(500).json({
+            error : "Internal server error"
+        })
     }
 }
 
