@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Signpage = () => {
-    const [currentState,setCurrentState] = useState("signin")
+    const [currentState,setCurrentState] = useState("login")
     const [data,setData] = useState({name:"",email:"",password:""})
     const navigate = useNavigate()
    const query =  useQueryClient()
