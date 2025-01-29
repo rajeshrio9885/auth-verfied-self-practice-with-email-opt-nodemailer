@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser")
 const path = require("path")
 const _dirname = path.resolve()
 app.use(cors({
-    origin : "http://localhost:5173",
+    origin : "*",
     credentials:true
 }))
 app.use(express.urlencoded({
