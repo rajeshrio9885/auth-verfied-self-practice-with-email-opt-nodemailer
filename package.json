@@ -1,7 +1,7 @@
 {
   "name": "auth-verfied",
   "version": "1.0.0",
-  "main": "backend/index.js",
+  "main": "./backend/index.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon ./backend/index.js",
     "start":"NODE_ENV=production node ./backend/index.js",
