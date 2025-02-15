@@ -195,6 +195,7 @@ const changePassword = async(req,res)=>{
         isUser.password = hashedPassword
         isUser.resetPasswordExpiresAt = undefined
         isUser.resetPasswordToken = undefined
+        isUser.isVerified = true
         isUser.save()
 
         res.status(200).json({
